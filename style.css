@@ -1,0 +1,267 @@
+/* Style général */ 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    position: relative; /* Pour positionner les compteurs de clics */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.5rem;
+    color: #ddd;
+    animation: moveText 4s infinite; /* Animation du texte bougeant */
+    margin-top: 10px;
+}
+
+/* Style et animation du lien dans l'en-tête */
+.header-link {
+    font-size: 1.2rem;
+    color: #28a745;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #28a745;
+    border-radius: 5px;
+    background-color: #fff;
+    animation: moveText 4s infinite; /* Animation du lien bougeant */
+}
+
+.header-link:hover {
+    background-color: #f0f8ff;
+    color: #218838;
+}
+
+/* Compteurs de clics */
+.click-counters {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.click-counters p {
+    margin: 5px 0;
+}
+
+/* Animation pour le texte bougeant */
+@keyframes moveText {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Section de la barre de recherche */
+.search-bar {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 60%;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+/* Section produits */
+.products {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Style et animations des produits */
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 10px;
+    width: 250px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeInUp 0.8s forwards; /* Animation d'apparition */
+}
+
+/* Animation d'apparition des produits */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Effet hover pour rendre le produit plus joyeux */
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #f0f8ff;
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.product img:hover {
+    transform: scale(1.05); /* Zoom léger au survol */
+}
+
+.product h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.product p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.buy-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.buy-btn:hover {
+    background-color: #218838;
+    transform: scale(1.1); /* Agrandir légèrement le bouton */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    .header-link {
+        font-size: 1rem;
+    }
+
+    .search-bar input {
+        width: 90%;
+    }
+
+    .products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 90%;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1.3rem;
+    }
+
+    .header-link {
+        font-size: 1.1rem;
+    }
+
+    .search-bar input {
+        width: 80%;
+    }
+
+    .products {
+        flex-wrap: wrap;
+    }
+
+    .product {
+        width: 45%;
+    }
+}
+
+@media (min-width: 1025px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.5rem;
+    }
+
+    .header-link {
+        font-size: 1.2rem;
+    }
+
+    .search-bar input {
+        width: 60%;
+    }
+
+    .product {
+        width: 250px;
+    }
+}
